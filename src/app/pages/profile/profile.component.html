@@ -4,57 +4,10 @@
 
 <div class="content-block dx-card responsive-paddings">
   <dx-form id="form" [formData]="employee" labelLocation="top" [colCountByScreen]="colCountByScreen">
-    <dxi-item dataField="ID">
-      <dxo-label [visible]="true" text="ID"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="DisplayName" [editorOptions]="{ readOnly: true }">
-      <dxo-label [visible]="true" text="Display Name"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="FirstName">
-      <dxo-label [visible]="true" text="First Name"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="LastName">
-      <dxo-label [visible]="true" text="Last Name"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="PhoneNumber" [editorOptions]="{ readOnly: true }">
-      <dxo-label [visible]="true" text="Phone Number"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="Prefix">
-      <dxo-label [visible]="true" text="Prefix"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="Position">
-      <dxo-label [visible]="true" text="Position"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="Picture">
-      <dxo-label [visible]="true" text="Picture"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="BirthDate">
-      <dxo-label [visible]="true" text="Birth Date"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="HireDate">
-      <dxo-label [visible]="true" text="Hire Date"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="AssignedTasks">
-      <dxo-label [visible]="true" text="Assigned Tasks"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="Notes">
-      <dxo-label [visible]="true" text="Notes"></dxo-label>
-    </dxi-item>
-
-    <dxi-item dataField="Address">
-      <dxo-label [visible]="true" text="Address"></dxo-label>
-    </dxi-item>
-
+    <ng-container *ngFor="let field of employeeFields">
+      <dxi-item [dataField]="field.name" [editorOptions]="{ readOnly: !field.edit }">
+        <dxo-label [visible]="true" [text]="field.displayedName || field.name"></dxo-label>
+      </dxi-item>
+    </ng-container>
   </dx-form>
 </div>
