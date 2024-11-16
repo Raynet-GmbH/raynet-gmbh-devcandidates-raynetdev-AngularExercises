@@ -9,7 +9,7 @@ import { Employee } from 'src/app/shared/components/profile-card/model/employee.
 export class ProfileComponent {
   employee: Employee;
   colCountByScreen: object;
-  employeeFields: { name: string, inhalt: any, edit: boolean, displayedName?: string }[];
+  employeeFields: { name: string, content: any, edit: boolean, displayedName?: string }[];
 
   constructor() {
     this.employee = {
@@ -38,19 +38,19 @@ export class ProfileComponent {
 
     // Employee profile fields with their values and edit permissions
     this.employeeFields = [
-      { name: 'ID', inhalt: this.employee.ID, edit: true },
-      { name: 'DisplayName', inhalt: this.employee.DisplayName, edit: false, displayedName: 'Display Name' },
-      { name: 'FirstName', inhalt: this.employee.FirstName, edit: true, displayedName: 'First Name' },
-      { name: 'LastName', inhalt: this.employee.LastName, edit: true, displayedName: 'Last Name' },
-      { name: 'PhoneNumber', inhalt: this.employee.PhoneNumber, edit: false, displayedName: 'Phone Number' },
-      { name: 'Prefix', inhalt: this.employee.Prefix, edit: true },
-      { name: 'Position', inhalt: this.employee.Position, edit: true },
-      { name: 'Picture', inhalt: this.employee.Picture, edit: true },
-      { name: 'BirthDate', inhalt: this.employee.BirthDate, edit: true, displayedName: 'Birth Date' },
-      { name: 'HireDate', inhalt: this.employee.HireDate, edit: true, displayedName: 'Hire Date' },
-      { name: 'AssignedTasks', inhalt: this.employee.AssignedTasks, edit: true, displayedName: 'Assigned Tasks' },
-      { name: 'Notes', inhalt: this.employee.Notes, edit: true },
-      { name: 'Address', inhalt: this.employee.Address, edit: true }
+      { name: 'ID', content: this.employee.ID, edit: true },
+      { name: 'DisplayName', content: this.employee.DisplayName, edit: false, displayedName: 'Display Name' },
+      { name: 'FirstName', content: this.employee.FirstName, edit: true, displayedName: 'First Name' },
+      { name: 'LastName', content: this.employee.LastName, edit: true, displayedName: 'Last Name' },
+      { name: 'PhoneNumber', content: this.employee.PhoneNumber, edit: false, displayedName: 'Phone Number' },
+      { name: 'Prefix', content: this.employee.Prefix, edit: true },
+      { name: 'Position', content: this.employee.Position, edit: true },
+      { name: 'Picture', content: this.employee.Picture, edit: true },
+      { name: 'BirthDate', content: this.employee.BirthDate, edit: true, displayedName: 'Birth Date' },
+      { name: 'HireDate', content: this.employee.HireDate, edit: true, displayedName: 'Hire Date' },
+      { name: 'AssignedTasks', content: this.employee.AssignedTasks, edit: true, displayedName: 'Assigned Tasks' },
+      { name: 'Notes', content: this.employee.Notes, edit: true },
+      { name: 'Address', content: this.employee.Address, edit: true }
     ];
   }
 }

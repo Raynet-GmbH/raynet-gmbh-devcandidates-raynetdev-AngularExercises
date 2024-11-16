@@ -4,7 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DxFormModule } from 'devextreme-angular/ui/form';
 import { DxLoadIndicatorModule } from 'devextreme-angular/ui/load-indicator';
-import { DxSelectBoxModule } from 'devextreme-angular';
+import { DxCheckBoxModule, DxSelectBoxModule } from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services';
@@ -19,7 +19,11 @@ export class CreateAccountFormComponent {
   loading = false;
   formData: any = {};
   selectedCountryCode: string = '';  // selected country code for the phone number
-  countryPhoneCodes: any[] = [];  // list of country phone codes
+  countryPhoneCodes: {
+    name: string;
+    code: string;
+  }[] = [];  // list of country phone codes
+  agreedToTerms: boolean | null | undefined = false;
 
   constructor(
     private authService: AuthService,
@@ -103,7 +107,8 @@ export class CreateAccountFormComponent {
     RouterModule,
     DxFormModule,
     DxLoadIndicatorModule,
-    DxSelectBoxModule
+    DxSelectBoxModule,
+    DxCheckBoxModule
   ],
   declarations: [CreateAccountFormComponent],
   exports: [CreateAccountFormComponent]

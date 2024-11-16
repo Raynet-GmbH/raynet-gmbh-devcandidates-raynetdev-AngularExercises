@@ -1,15 +1,23 @@
 @import "../../../../themes/generated/variables.base.scss";
 
 .create-account-form {
-  .policy-info {
-    margin: 10px 0;
-    color: rgba($base-text-color, alpha($base-text-color) * 0.7);
-    font-size: 14px;
-    font-style: normal;
+  .terms-container {
+    display: flex;
+    align-items: center;
+  }
 
-    a {
-      color: rgba($base-text-color, alpha($base-text-color) * 0.7);
-    }
+  .terms-text {
+    margin-left: 8px;
+    font-size: 13px;
+  }
+
+  .terms-text a {
+    color: $base-accent;
+    text-decoration: none;
+  }
+
+  .terms-text a:hover {
+    text-decoration: underline;
   }
 
   .login-link {
@@ -18,5 +26,3 @@
     text-align: center;
   }
 }
-
-@import 'ngx-toastr/toastr';

@@ -67,11 +67,15 @@
         message="Invalid phone number"></dxi-validation-rule>
     </dxi-item>
 
-    <dxi-item>
-      <div class='policy-info'>
-        By creating an account, you agree to the <a routerLink="#">Terms of Service</a> and <a routerLink="#">Privacy
-          Policy</a>.
-      </div>
+    <dxi-item class="terms-container">
+      <dx-check-box [(value)]="agreedToTerms">
+      </dx-check-box>
+      <span class="terms-text">
+        I agree to the
+        <a routerLink="#">Terms of Service</a> and
+        <a routerLink="#">Privacy Policy</a>.
+      </span>
+      <dxi-validation-rule type="required" message="You must agree to the terms and conditions"></dxi-validation-rule>
     </dxi-item>
 
     <dxi-item itemType="button">
