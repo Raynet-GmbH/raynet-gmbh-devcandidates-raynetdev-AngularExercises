@@ -18,6 +18,8 @@
 
       <!-- Validation Rule for Password -->
       <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
+      <dxi-validation-rule type="custom" [validationCallback]="strongPassword"
+        message="Password must have 8+ characters, an uppercase letter, a number and a special character"></dxi-validation-rule>
     </dxi-item>
 
     <!-- Confirm Password Field -->
@@ -26,6 +28,8 @@
       <dxo-label [visible]="false"></dxo-label>
 
       <!-- Validation Rules for Confirm Password -->
+      <dxi-validation-rule type="custom" [validationCallback]="strongPassword"
+        message="Password must have 8+ characters, an uppercase letter, a number and a special character"></dxi-validation-rule>
       <dxi-validation-rule type="required" message="Please confirm your password"></dxi-validation-rule>
       <dxi-validation-rule type="custom" [validationCallback]="confirmPassword"
         message="Passwords do not match"></dxi-validation-rule>
@@ -39,13 +43,13 @@
       <!-- Validation Rules for Display Name -->
       <dxi-validation-rule type="required" message="Display Name is required"></dxi-validation-rule>
       <dxi-validation-rule type="stringLength" [max]="15"
-        message="Display Name must be at most 15 characters long"></dxi-validation-rule>
+        message="Display name cannot be longer than 15 characters"></dxi-validation-rule>
     </dxi-item>
 
     <!-- Country Code Select Box -->
     <dxi-item class="form-item">
       <dx-select-box [dataSource]="countryPhoneCodes" displayExpr="name" valueExpr="code"
-        [(value)]="selectedCountryCode" placeholder="Select a country">
+        [(value)]="selectedCountryCode" placeholder="Select a country" [searchEnabled]="true">
       </dx-select-box>
 
       <!-- Validation for Country Code -->

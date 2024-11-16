@@ -6,7 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
-import { ProfileCardComponent, ProfileCardModule } from './shared/components/profile-card/profile-card.component';
+import { ProfileCardModule } from './shared/components/profile-card/profile-card.component';
 import { CommonModule } from '@angular/common';
 
 const routes: Routes = [

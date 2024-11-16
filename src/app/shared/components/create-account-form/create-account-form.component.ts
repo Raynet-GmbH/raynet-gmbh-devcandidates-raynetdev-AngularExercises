@@ -84,6 +84,13 @@ export class CreateAccountFormComponent {
     return e.value === this.formData.password;
   }
 
+  strongPassword = (e: ValidationCallbackData) => {
+    const password = e.value;
+    // at least 8 characters, with uppercase, lowercase, a number and a special character
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordPattern.test(password);
+  };
+
   validatePhoneNumber = (e: ValidationCallbackData) => {
     const phonePattern = /^[\d\s]{4,14}$/;
     return phonePattern.test(e.value);
