@@ -61,10 +61,10 @@ export class AuthService {
     }
   }
 
-  async createAccount(email: string, password: string) {
+  async createAccount(email: string, password: string, displayName: string, phoneNumber: string) {
     try {
       // Send request
-      console.log(email, password);
+      console.log(email, password, displayName, phoneNumber);
 
       this.router.navigate(['/create-account']);
       return {
