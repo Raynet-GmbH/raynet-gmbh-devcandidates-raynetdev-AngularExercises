@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
+import { Employee } from 'src/app/shared/components/profile-card/model/employee.model';
 
 @Component({
   templateUrl: 'profile.component.html',
-  styleUrls: [ './profile.component.scss' ]
+  styleUrls: ['./profile.component.scss']
 })
 
 export class ProfileComponent {
-  employee: any;
+  employee: Employee;
   colCountByScreen: object;
 
   constructor() {
     this.employee = {
       ID: 7,
+      DisplayName: 'Sandra Johnson',  // read-only
       FirstName: 'Sandra',
       LastName: 'Johnson',
+      PhoneNumber: '+91 923232873',  // read-only
       Prefix: 'Mrs.',
       Position: 'Controller',
       Picture: 'images/employees/06.png',
